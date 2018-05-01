@@ -1,2 +1,0 @@
-# shepherdkruse.github.io
-SpaceWithinReachWebsite
