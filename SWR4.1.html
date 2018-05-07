@@ -36,9 +36,9 @@ body, html {
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
-      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
+      <a href="#start" class="w3-bar-item w3-button"><i class="fa fa-user"></i> GET STARTED</a>
+      <a href="#kit" class="w3-bar-item w3-button"><i class="fa fa-th"></i> THE KIT</a>
+      <a href="#projects" class="w3-bar-item w3-button"><i class="fa fa-cog"></i>PROJECTS</a>
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -53,18 +53,20 @@ body, html {
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#start" onclick="w3_close()" class="w3-bar-item w3-button">GET STARTED</a>
+  <a href="#kit" onclick="w3_close()" class="w3-bar-item w3-button">THE KIT</a>
+  <a href="#projects" onclick="w3_close()" class="w3-bar-item w3-button">PROJECTS</a>
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:10px">
-   <span class="w3-jumbo w3-hide-small " style= "font-family: Garamond; background-color: grey; opacity: 0.85">#SpaceWithinReach</span><br>
+  <div class="w3-display-left w3-text-white" style="padding-bottom:280px; padding-left: 80px;">
+   <span class="w3-jumbo w3-hide-small " style= "font-family: Garamond">#SpaceWithinReach</span><br>
+ </div>
+ <div class="w3-display-left w3-text-white" style="padding:80px ">
    <span class="w3-xxlarge w3-hide-large w3-hide-medium" style= "font-family: Garamond; background-color: grey; opacity: 0.85">#SpaceWithinReach</span><br>
-    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-hover-opacity-off" style="opacity: 0.8">Get Started Here</a></p>
+    <p><a href="#team" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-hover-opacity-off" style="opacity: 0.8">Get Started Here</a></p>
   </div>
   <div class="w3-display-bottomleft w3-xlarge w3-section" style="padding:24px 48px">
     <a href= https://www.facebook.com/Shepkruse/><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
@@ -76,58 +78,53 @@ body, html {
 <!-- About Section -->
 <div class="w3-container" style="padding:128px 16px" id="about">
   <h3 class="w3-center">ABOUT THE COMPANY</h3>
-  <p class="w3-center w3-large">Key features of our company</p>
   <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-quarter">
-      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Responsive</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Passion</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Design</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-quarter">
+
+
       <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Support</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p class="w3-large">Mission</p>
+      <p>The mission of #SpaceWithinReach is to make it easy for anyone, ranging from individuals to universities, to
+      launch experiments and explore the earth at altitudes of 100,000+ feet using a space balloon. The SpaceWithinReach
+      movement is exactly as it sounds, we're bringing space to everyone. Through a developed and thouroughly tested kit,
+      Shepherd Space Systems will provide the necessities to launch and recover a space balloon.</p>
     </div>
   </div>
 </div>
 
-<!-- Promo Section - "We know design" -->
+<!-- The System-->
 <div class="w3-container w3-light-grey" style="padding:128px 16px">
   <div class="w3-row-padding">
     <div class="w3-col m6">
-      <h3>We know design.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
-      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p>
+      <h3>The System</h3>
+      <p>This system has a few main components. The first item is the balloon, which is responsible for carrying the
+      balloon to altitudes in excess of 100,000ft. The next component is the payload, this is the part of the
+      system that will allow you to collect and receive data from your balloon. The next component is a recovery
+      system, which will allow your balloon to travel back to earth without harm. The next component is the receiver.
+      The receiver is responsible for collecting the data from the balloon payload. The final component is the user
+      interface, responsible for reading the data from the receiver. All of these systems are neccessary to provide
+      you with the ability to launch a payload to near space.</p>
+      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Details</a></p>
     </div>
     <div class="w3-col m6">
-      <img class="w3-image w3-round-large" src="/w3images/phone_buildings.jpg" alt="Buildings" width="700" height="394">
+      <img class="w3-image w3-round-large" src="Tracker2.PNG" alt="Tracker" width="700" height="394">
     </div>
   </div>
 </div>
 
-<!-- Team Section -->
+<!-- Steps to order Section -->
 <div class="w3-container" style="padding:128px 16px" id="team">
-  <h3 class="w3-center">THE TEAM</h3>
-  <p class="w3-center w3-large">The ones who runs this company</p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+  <h3 class="w3-center">Get Started Now</h3>
+  <p class="w3-center w3-large">Steps To Space</p>
+  <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <img src="Tracker1.png" style="width:100%">
         <div class="w3-container">
-          <h3>John Doe</h3>
-          <p class="w3-opacity">CEO & Founder</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          <h3>STEP 1</h3>
+          <p class="w3-opacity">Order The Kit</p>
+          <p>Included in this kit is the tracker, the receiver, the balloon, the recovery system, and a detailed
+             guide on launching your space balloon.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href= https://kickstarter.com><i class="fa fa-truck"></i> Order</a></button></p>
         </div>
       </div>
     </div>
@@ -135,10 +132,10 @@ body, html {
       <div class="w3-card">
         <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
         <div class="w3-container">
-          <h3>Anja Doe</h3>
-          <p class="w3-opacity">Art Director</p>
+          <h3>STEP 2</h3>
+          <p class="w3-opacity">Assemble</p>
           <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><a href=instructions.html ><i class="fa fa-cogs"></i> Assembly</a></button></p>
         </div>
       </div>
     </div>
@@ -146,10 +143,10 @@ body, html {
       <div class="w3-card">
         <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
         <div class="w3-container">
-          <h3>Mike Ross</h3>
-          <p class="w3-opacity">Web Designer</p>
+          <h3>STEP 3</h3>
+          <p class="w3-opacity">Launch</p>
           <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-newspaper-o"></i> Instructions</button></p>
         </div>
       </div>
     </div>
@@ -157,10 +154,10 @@ body, html {
       <div class="w3-card">
         <img src="/w3images/team4.jpg" alt="Dan" style="width:100%">
         <div class="w3-container">
-          <h3>Dan Star</h3>
-          <p class="w3-opacity">Designer</p>
+          <h3>STEP 4</h3>
+          <p class="w3-opacity">Recover</p>
           <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-map"></i> Track</button></p>
         </div>
       </div>
     </div>
@@ -189,8 +186,8 @@ body, html {
 
 <!-- Work Section -->
 <div class="w3-container" style="padding:128px 16px" id="work">
-  <h3 class="w3-center">OUR WORK</h3>
-  <p class="w3-center w3-large">What we've done for people</p>
+  <h3 class="w3-center">The Kit</h3>
+  <p class="w3-center w3-large">Innovating The Future Of Space</p>
 
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-col l3 m6">
@@ -259,10 +256,10 @@ body, html {
   </div>
 </div>
 
-<!-- Pricing Section -->
-<div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
-  <h3>PRICING</h3>
-  <p class="w3-large">Choose a pricing plan that fits your needs.</p>
+<!-- Projects Section -->
+<div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="projects">
+  <h3>PROJECTS</h3>
+  <p class="w3-large">Current And Past Projects</p>
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-third w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
@@ -321,9 +318,9 @@ body, html {
   <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-half">
-      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Chicago, US</p>
-      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Colorado Springs, US</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +1-719-360-2628</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: shepherd.h.kruse@gmail.com</p>
       <br>
       <form action="/action_page.php" target="_blank">
         <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
@@ -331,8 +328,9 @@ body, html {
         <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
         <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
         <p>
-          <button class="w3-button w3-black" type="submit">
-            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+
+          <button class="w3-button w3-black" type="submit"><a href="mailto:shepherd.h.kruse@gmail.com">
+            <i class="fa fa-paper-plane"></a></i> SEND MESSAGE
           </button>
         </p>
       </form>
@@ -358,7 +356,7 @@ body, html {
 <script>
 function myMap()
 {
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  myCenter=new google.maps.LatLng(39.046034, -104.650971);
   var mapOptions= {
     center:myCenter,
     zoom:12, scrollwheel: false, draggable: false,
@@ -397,7 +395,7 @@ function w3_close() {
     mySidebar.style.display = "none";
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUmzuY5T4m_G8MpXLDs-8ClxAngKMdm4M&callback=myMap"></script>
 <!--
 To use this code on your website, get a free API key from Google.
 Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
