@@ -286,7 +286,7 @@ export default function Home() {
               <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-blue-500/30">
                 <Image
                   src="/shepherd-headshot.png"
-                  alt="Shepherd Henry Kruse"
+                  alt="Shepherd Kruse"
                   width={176}
                   height={176}
                   className="w-full h-full object-cover"
@@ -295,7 +295,7 @@ export default function Home() {
             </div>
             {/* Bio content */}
             <div className="flex-1">
-              <h3 className="text-[24px] font-semibold mb-1">Shepherd Henry Kruse</h3>
+              <h3 className="text-[24px] font-semibold mb-1">Shepherd Kruse</h3>
               <div className="font-mono text-[12px] tracking-[1.5px] uppercase text-[var(--accent)] mb-5">Founder & CEO</div>
               <p className="text-[15px] text-[var(--text-2)] leading-[1.85] mb-6">
                 Shepherd founded Shepherd Space Systems to solve a problem he saw firsthand: the solid rocket motor industrial base lacks the agile, flexible manufacturing capability that modern defense programs require. He designed and built the company&apos;s extrusion system, propellant formulations, and motor hardware from scratch.
