@@ -46,20 +46,29 @@ export default function Home() {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center px-5 md:px-10 relative overflow-hidden">
         {/* Real photo background - static fire test */}
+        {/* Mobile: position left to show rocket, Desktop: center top */}
         <div 
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 bg-cover bg-[position:35%_top] md:bg-[position:center_top]"
           style={{
             backgroundImage: `url('/static-fire-test.jpg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center top',
           }}
         />
-        {/* Dark overlay - lighter vertical gradient to show more image */}
+        {/* Dark overlay - vertical gradient */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[var(--bg)]/20 via-[var(--bg)]/40 to-[var(--bg)]/90" />
-        {/* Narrower left scrim - only covers text area, leaves center/right for flame visibility */}
-        <div className="absolute inset-0 z-[1]" style={{
-          background: 'linear-gradient(to right, rgba(6,8,12,0.85) 0%, rgba(6,8,12,0.6) 25%, rgba(6,8,12,0.2) 45%, transparent 60%)'
-        }} />
+        {/* Left scrim for text - lighter on mobile to show more rocket */}
+        <div 
+          className="absolute inset-0 z-[1] hidden md:block"
+          style={{
+            background: 'linear-gradient(to right, rgba(6,8,12,0.85) 0%, rgba(6,8,12,0.6) 25%, rgba(6,8,12,0.2) 45%, transparent 60%)'
+          }} 
+        />
+        {/* Mobile: top-to-bottom gradient instead of left-to-right */}
+        <div 
+          className="absolute inset-0 z-[1] md:hidden"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(6,8,12,0.3) 0%, rgba(6,8,12,0.5) 40%, rgba(6,8,12,0.85) 70%, rgba(6,8,12,0.95) 100%)'
+          }} 
+        />
         {/* Subtle vertical lines */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.06] z-[2]">
           <div className="absolute w-px h-full left-1/3 bg-[var(--text-3)]" />
