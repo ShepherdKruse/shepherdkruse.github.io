@@ -237,14 +237,21 @@ export default function Home() {
           <p className="section-desc">Shepherd Space Systems is executing across defense and commercial aerospace, with active work spanning tactical propulsion, counter-UAS, and atmospheric research.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--border)] border border-[var(--border)] mt-14">
             {[
-              { category: "Defense", title: "Counter-UAS Systems", desc: "Engineering and manufacturing solid rocket motors for a kinetic counter-drone mechanism commissioned by the United States Space Force. High-efficiency propulsion optimized for rapid engagement of unmanned aerial threats." },
-              { category: "Defense", title: "Tactical Motor Production", desc: "Manufacturing high-efficiency solid rocket motors for payload delivery applications. Precision grain geometries tailored for specific thrust profiles and mission envelopes." },
-              { category: "Research", title: "Stratolink (Nonprofit)", desc: "Atmospheric research and autonomous flight operations through an associated nonprofit organization. Laying groundwork for high-altitude data collection and autonomous vehicle development." },
-              { category: "Development", title: "Scaled Motor Qualification", desc: "Expanding our vacuum-extrusion platform to larger motor diameters for tactical missile applications. Hardware scaling, qualification testing, and manufacturing process documentation for technology transition." },
+              { category: "Defense", title: "Counter-UAS Systems", desc: "Engineering and manufacturing solid rocket motors for a kinetic counter-drone mechanism commissioned by the United States Space Force. High-efficiency propulsion optimized for rapid engagement of unmanned aerial threats.", link: null },
+              { category: "Defense", title: "Tactical Motor Production", desc: "Manufacturing high-efficiency solid rocket motors for payload delivery applications. Precision grain geometries tailored for specific thrust profiles and mission envelopes.", link: null },
+              { category: "Research", title: "Stratolink (Nonprofit)", desc: "Atmospheric research and autonomous flight operations through an associated nonprofit organization. Laying groundwork for high-altitude data collection and autonomous vehicle development.", link: "https://stratolink.org" },
+              { category: "Development", title: "Scaled Motor Qualification", desc: "Expanding our vacuum-extrusion platform to larger motor diameters for tactical missile applications. Hardware scaling, qualification testing, and manufacturing process documentation for technology transition.", link: null },
             ].map((prog, i) => (
-              <div key={i} className="bg-[var(--bg)] p-9 md:p-11">
+              <div key={i} className="bg-[var(--bg)] p-9 md:p-11 group">
                 <div className="font-mono text-[9.5px] tracking-[2px] uppercase text-[var(--accent)] mb-4">{prog.category}</div>
-                <h3 className="text-[18px] font-semibold mb-3">{prog.title}</h3>
+                {prog.link ? (
+                  <a href={prog.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 group/link">
+                    <h3 className="text-[18px] font-semibold mb-3 group-hover/link:text-blue-400 transition-colors">{prog.title}</h3>
+                    <svg className="w-4 h-4 text-blue-400 opacity-0 group-hover/link:opacity-100 transition-opacity -translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                ) : (
+                  <h3 className="text-[18px] font-semibold mb-3">{prog.title}</h3>
+                )}
                 <p className="text-[14px] text-[var(--text-2)] leading-[1.75]">{prog.desc}</p>
               </div>
             ))}
@@ -314,7 +321,6 @@ export default function Home() {
             <div>
               {[
                 { label: "Email", value: "shepherd.kruse@shepherdspacesystems.com", href: "mailto:shepherd.kruse@shepherdspacesystems.com" },
-                { label: "Phone", value: "(719) 360-2628", href: "tel:+17193602628" },
                 { label: "Location", value: "Colorado Springs, Colorado", href: null },
                 { label: "CAGE / UEI", value: "13MC5 / JN1DXJ1NPD59", href: null },
               ].map((item, i) => (
