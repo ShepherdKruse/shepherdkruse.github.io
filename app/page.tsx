@@ -74,10 +74,16 @@ export default function Home() {
                 Solid Propulsion Manufacturing
               </span>
             </div>
-            <h1 className="text-[clamp(34px,4.8vw,56px)] font-extrabold leading-[1.08] tracking-[-2px] mb-7 animate-fade-in animate-delay-2">
+            <h1 
+              className="text-[clamp(34px,4.8vw,56px)] font-black leading-[1.08] tracking-[-2px] mb-7 animate-fade-in animate-delay-2"
+              style={{ textShadow: '0 2px 40px rgba(0,0,0,0.5)' }}
+            >
               We build the motors<br />the mission <span className="text-[var(--accent)]">depends on.</span>
             </h1>
-            <p className="text-[17px] text-[var(--text-2)] leading-[1.75] max-w-[520px] mb-10 animate-fade-in animate-delay-3">
+            <p 
+              className="text-[17px] text-[var(--text-2)] leading-[1.75] max-w-[520px] mb-10 animate-fade-in animate-delay-3"
+              style={{ textShadow: '0 1px 20px rgba(0,0,0,0.4)' }}
+            >
               Shepherd Space Systems manufactures high-performance solid rocket motors using proprietary vacuum-extrusion technology. Vertically integrated. Defense-ready. Colorado Springs.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in animate-delay-4">
@@ -87,7 +93,7 @@ export default function Home() {
           </div>
 
           {/* Data Card */}
-          <div className="bg-[var(--bg-card)]/90 backdrop-blur-sm border border-blue-500/20 p-8 lg:p-9 animate-fade-in animate-delay-5 relative overflow-hidden">
+          <div className="bg-[rgba(19,21,24,0.94)] backdrop-blur-sm border border-blue-500/20 p-8 lg:p-9 animate-fade-in animate-delay-5 relative overflow-hidden">
             {/* Subtle blue glow in corner */}
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
             <div className="font-mono text-[10px] tracking-[2.5px] uppercase text-blue-400 mb-7 pb-3 border-b border-blue-500/20 relative">
