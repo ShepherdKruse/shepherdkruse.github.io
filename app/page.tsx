@@ -46,29 +46,25 @@ export default function Home() {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center px-5 md:px-10 relative overflow-hidden">
         {/* Real photo background - static fire test */}
-        <div className="absolute inset-0">
-          <Image
-            src="/static-fire-test.jpg"
-            alt=""
-            fill
-            className="object-cover object-center opacity-[0.15] blur-[2px]"
-            priority
-          />
-          {/* Dark overlay with subtle gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg)]/70 via-[var(--bg)]/85 to-[var(--bg)]" />
-          {/* Subtle grain texture */}
-          <div className="absolute inset-0 opacity-[0.4]" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-            backgroundSize: '128px 128px'
-          }} />
-        </div>
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('/static-fire-test.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.2,
+            filter: 'blur(1px)'
+          }}
+        />
+        {/* Dark overlay with subtle gradient */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[var(--bg)]/60 via-[var(--bg)]/80 to-[var(--bg)]" />
         {/* Subtle vertical lines */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.06]">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.06] z-[2]">
           <div className="absolute w-px h-full left-1/3 bg-[var(--text-3)]" />
           <div className="absolute w-px h-full left-2/3 bg-[var(--text-3)]" />
         </div>
 
-        <div className="relative grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 lg:gap-20 items-center w-full max-w-[1200px] mx-auto pt-20 lg:pt-0">
+        <div className="relative z-[3] grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 lg:gap-20 items-center w-full max-w-[1200px] mx-auto pt-20 lg:pt-0">
           <div>
             <div className="flex items-center gap-3.5 mb-6 animate-fade-in animate-delay-1">
               <span className="w-7 h-px bg-[var(--accent)]" />
