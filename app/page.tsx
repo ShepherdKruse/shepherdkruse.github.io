@@ -51,13 +51,11 @@ export default function Home() {
           style={{
             backgroundImage: `url('/static-fire-test.jpg')`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.2,
-            filter: 'blur(1px)'
+            backgroundPosition: 'center top',
           }}
         />
-        {/* Dark overlay with subtle gradient */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[var(--bg)]/60 via-[var(--bg)]/80 to-[var(--bg)]" />
+        {/* Dark overlay with gradient - allows image to show through more */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[var(--bg)]/40 via-[var(--bg)]/70 to-[var(--bg)]/95" />
         {/* Subtle vertical lines */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.06] z-[2]">
           <div className="absolute w-px h-full left-1/3 bg-[var(--text-3)]" />
