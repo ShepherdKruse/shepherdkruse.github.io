@@ -54,10 +54,12 @@ export default function Home() {
             backgroundPosition: 'center top',
           }}
         />
-        {/* Dark overlay - vertical gradient for bottom fade */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[var(--bg)]/30 via-[var(--bg)]/60 to-[var(--bg)]/95" />
-        {/* Left-to-right gradient scrim for text legibility */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[var(--bg)]/90 via-[var(--bg)]/50 to-transparent" />
+        {/* Dark overlay - lighter vertical gradient to show more image */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[var(--bg)]/20 via-[var(--bg)]/40 to-[var(--bg)]/90" />
+        {/* Narrower left scrim - only covers text area, leaves center/right for flame visibility */}
+        <div className="absolute inset-0 z-[1]" style={{
+          background: 'linear-gradient(to right, rgba(6,8,12,0.85) 0%, rgba(6,8,12,0.6) 25%, rgba(6,8,12,0.2) 45%, transparent 60%)'
+        }} />
         {/* Subtle vertical lines */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.06] z-[2]">
           <div className="absolute w-px h-full left-1/3 bg-[var(--text-3)]" />
