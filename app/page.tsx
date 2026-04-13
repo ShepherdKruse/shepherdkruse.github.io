@@ -54,8 +54,10 @@ export default function Home() {
             backgroundPosition: 'center top',
           }}
         />
-        {/* Dark overlay with gradient - allows image to show through more */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[var(--bg)]/40 via-[var(--bg)]/70 to-[var(--bg)]/95" />
+        {/* Dark overlay - vertical gradient for bottom fade */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[var(--bg)]/30 via-[var(--bg)]/60 to-[var(--bg)]/95" />
+        {/* Left-to-right gradient scrim for text legibility */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[var(--bg)]/90 via-[var(--bg)]/50 to-transparent" />
         {/* Subtle vertical lines */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.06] z-[2]">
           <div className="absolute w-px h-full left-1/3 bg-[var(--text-3)]" />
@@ -78,7 +80,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in animate-delay-4">
               <Link href="#contact" className="btn-primary">Get in Touch</Link>
-              <Link href="#technology" className="btn-secondary">Our Technology</Link>
+              <Link href="#technology" className="btn-secondary bg-[var(--bg)]/60 backdrop-blur-sm">Our Technology</Link>
             </div>
           </div>
 
