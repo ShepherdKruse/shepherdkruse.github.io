@@ -36,7 +36,7 @@ export default function Home() {
           </Link>
           <Link 
             href="#contact" 
-            className="font-mono text-[10.5px] tracking-[1.2px] uppercase text-[var(--accent)] px-4 py-1.5 border border-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-colors"
+            className="font-mono text-[10.5px] tracking-[1.2px] uppercase text-blue-400 px-4 py-1.5 border border-blue-500/50 hover:bg-blue-500 hover:text-white hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all"
           >
             Contact
           </Link>
@@ -83,8 +83,10 @@ export default function Home() {
           </div>
 
           {/* Data Card */}
-          <div className="bg-[var(--bg-card)]/90 backdrop-blur-sm border border-[var(--border)] p-8 lg:p-9 animate-fade-in animate-delay-5 relative overflow-hidden">
-            <div className="font-mono text-[10px] tracking-[2.5px] uppercase text-[var(--text-3)] mb-7 pb-3 border-b border-[var(--border)]">
+          <div className="bg-[var(--bg-card)]/90 backdrop-blur-sm border border-blue-500/20 p-8 lg:p-9 animate-fade-in animate-delay-5 relative overflow-hidden">
+            {/* Subtle blue glow in corner */}
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="font-mono text-[10px] tracking-[2.5px] uppercase text-blue-400 mb-7 pb-3 border-b border-blue-500/20 relative">
               Demonstrated Performance
             </div>
             {[
@@ -157,10 +159,10 @@ export default function Home() {
               { num: "05", title: "Counter-UAS Propulsion", desc: "Solid rocket motors engineered for kinetic counter-drone applications. High-efficiency designs optimized for rapid-response deployment in partnership with the U.S. Space Force." },
               { num: "06", title: "Digital Process Control", desc: "Real-time extrusion monitoring with closed-loop control. Full digital traceability from propellant batch through final motor assembly, supporting production readiness reviews." },
             ].map((cap, i) => (
-              <div key={i} className="bg-[var(--bg)] p-8 md:p-11 transition-colors hover:bg-[var(--bg-hover)] relative group">
-                <div className="absolute top-0 left-0 w-8 h-0.5 bg-[var(--accent)]" />
-                <div className="font-mono text-[10px] text-[var(--accent)] mb-5 tracking-[1px]">{cap.num}</div>
-                <h3 className="text-[17px] font-semibold mb-3 tracking-[-0.2px]">{cap.title}</h3>
+              <div key={i} className="bg-[var(--bg)] p-8 md:p-11 transition-all duration-300 hover:bg-[var(--bg-hover)] relative group">
+                <div className="absolute top-0 left-0 w-8 h-0.5 bg-blue-500 group-hover:w-full group-hover:bg-blue-500/50 transition-all duration-300" />
+                <div className="font-mono text-[10px] text-blue-400 mb-5 tracking-[1px]">{cap.num}</div>
+                <h3 className="text-[17px] font-semibold mb-3 tracking-[-0.2px] group-hover:text-blue-300 transition-colors">{cap.title}</h3>
                 <p className="text-[13.5px] text-[var(--text-2)] leading-[1.7]">{cap.desc}</p>
               </div>
             ))}
@@ -248,14 +250,21 @@ export default function Home() {
       </section>
 
       {/* Leadership Section */}
-      <section id="leadership" className="py-28 md:py-32 px-5 md:px-10 scroll-mt-14">
-        <div className="wrap">
+      <section id="leadership" className="py-28 md:py-32 px-5 md:px-10 scroll-mt-14 relative overflow-hidden">
+        {/* Subtle blue ambient glow */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="wrap relative">
           <div className="section-tag">05 / Leadership</div>
           <h2 className="section-heading">Built by an engineer who<br />understands the mission.</h2>
           <div className="mt-14 flex flex-col md:flex-row items-start gap-10 md:gap-16 max-w-[900px]">
-            {/* Photo - clean, no frame */}
-            <div className="relative flex-shrink-0">
-              <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-[var(--border-2)]">
+            {/* Modern photo with blue accent ring */}
+            <div className="relative flex-shrink-0 group">
+              {/* Outer glow ring */}
+              <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-blue-500/20 via-blue-600/10 to-transparent blur-lg opacity-60 group-hover:opacity-100 transition-opacity" />
+              {/* Blue accent ring */}
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-blue-500/40 to-blue-600/20" />
+              {/* Photo container */}
+              <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-blue-500/30">
                 <Image
                   src="/shepherd-headshot.png"
                   alt="Shepherd Henry Kruse"
@@ -272,10 +281,16 @@ export default function Home() {
               <p className="text-[15px] text-[var(--text-2)] leading-[1.85] mb-6">
                 Shepherd founded Shepherd Space Systems to solve a problem he saw firsthand: the solid rocket motor industrial base lacks the agile, flexible manufacturing capability that modern defense programs require. He designed and built the company&apos;s extrusion system, propellant formulations, and motor hardware from scratch.
               </p>
-              <div className="flex flex-col gap-1.5 pt-4 border-t border-[var(--border)]">
-                <div className="font-mono text-[11px] text-[var(--text-3)]">M.S. Nuclear Engineering, 2025</div>
-                <div className="font-mono text-[11px] text-[var(--text-3)]">B.S. Astronautical Engineering</div>
-                <div className="font-mono text-[11px] text-[var(--text-3)]">First Lieutenant, United States Space Force</div>
+              <div className="flex flex-wrap gap-3 pt-5">
+                <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/25 rounded text-[11px] font-mono text-blue-400">
+                  M.S. Nuclear Engineering
+                </span>
+                <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/25 rounded text-[11px] font-mono text-blue-400">
+                  B.S. Astronautical Engineering
+                </span>
+                <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/25 rounded text-[11px] font-mono text-blue-400">
+                  1st Lt, USSF
+                </span>
               </div>
             </div>
           </div>
