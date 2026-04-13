@@ -36,7 +36,7 @@ export default function Home() {
           </Link>
           <Link 
             href="#contact" 
-            className="font-mono text-[10.5px] tracking-[1.2px] uppercase text-blue-400 px-4 py-1.5 border border-blue-500/50 rounded hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+            className="font-mono text-[10.5px] tracking-[1.2px] uppercase text-[var(--accent)] px-4 py-1.5 border border-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] transition-colors"
           >
             Contact
           </Link>
@@ -45,28 +45,27 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center px-5 md:px-10 relative overflow-hidden">
-        {/* Background effects - more vibrant blue */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0" style={{
-            background: `
-              radial-gradient(ellipse 60% 50% at 70% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 60%),
-              radial-gradient(ellipse 50% 60% at 20% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 90% 10%, rgba(37, 99, 235, 0.15) 0%, transparent 40%)
-            `
-          }} />
-          {/* Subtle grid pattern */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{
-            backgroundImage: `linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px'
+        {/* Real photo background - static fire test */}
+        <div className="absolute inset-0">
+          <Image
+            src="/static-fire-test.jpg"
+            alt=""
+            fill
+            className="object-cover object-center opacity-[0.15] blur-[2px]"
+            priority
+          />
+          {/* Dark overlay with subtle gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg)]/70 via-[var(--bg)]/85 to-[var(--bg)]" />
+          {/* Subtle grain texture */}
+          <div className="absolute inset-0 opacity-[0.4]" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+            backgroundSize: '128px 128px'
           }} />
         </div>
-        {/* Animated floating orbs */}
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/3 left-1/5 w-64 h-64 bg-blue-600/8 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
-        {/* Vertical lines */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
-          <div className="absolute w-px h-full left-1/3 bg-gradient-to-b from-transparent via-blue-500/50 to-transparent" />
-          <div className="absolute w-px h-full left-2/3 bg-gradient-to-b from-transparent via-blue-500/30 to-transparent" />
+        {/* Subtle vertical lines */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.06]">
+          <div className="absolute w-px h-full left-1/3 bg-[var(--text-3)]" />
+          <div className="absolute w-px h-full left-2/3 bg-[var(--text-3)]" />
         </div>
 
         <div className="relative grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 lg:gap-20 items-center w-full max-w-[1200px] mx-auto pt-20 lg:pt-0">
@@ -78,7 +77,7 @@ export default function Home() {
               </span>
             </div>
             <h1 className="text-[clamp(34px,4.8vw,56px)] font-extrabold leading-[1.08] tracking-[-2px] mb-7 animate-fade-in animate-delay-2">
-              We build the motors<br />the mission <span className="text-gradient">depends on.</span>
+              We build the motors<br />the mission <span className="text-[var(--accent)]">depends on.</span>
             </h1>
             <p className="text-[17px] text-[var(--text-2)] leading-[1.75] max-w-[520px] mb-10 animate-fade-in animate-delay-3">
               Shepherd Space Systems manufactures high-performance solid rocket motors using proprietary vacuum-extrusion technology. Vertically integrated. Defense-ready. Colorado Springs.
@@ -90,10 +89,7 @@ export default function Home() {
           </div>
 
           {/* Data Card */}
-          <div className="bg-[var(--bg-card)] border border-[var(--border)] p-8 lg:p-9 animate-fade-in animate-delay-5 relative overflow-hidden rounded-lg">
-            {/* Card glow effect */}
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl" />
+          <div className="bg-[var(--bg-card)]/90 backdrop-blur-sm border border-[var(--border)] p-8 lg:p-9 animate-fade-in animate-delay-5 relative overflow-hidden">
             <div className="font-mono text-[10px] tracking-[2.5px] uppercase text-[var(--text-3)] mb-7 pb-3 border-b border-[var(--border)]">
               Demonstrated Performance
             </div>
@@ -153,14 +149,12 @@ export default function Home() {
       </section>
 
       {/* Capabilities Section */}
-      <section id="capabilities" className="py-28 md:py-32 px-5 md:px-10 scroll-mt-14 relative">
-        {/* Subtle background glow */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="wrap relative">
+      <section id="capabilities" className="py-28 md:py-32 px-5 md:px-10 scroll-mt-14">
+        <div className="wrap">
           <div className="section-tag">02 / Capabilities</div>
           <h2 className="section-heading">Every critical subsystem,<br />manufactured in-house.</h2>
           <p className="section-desc">No supply chain bottlenecks. No geometry constraints from legacy tooling. Full traceability from raw chemistry to flight-ready motor.</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--border)] border border-[var(--border)] mt-14 rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--border)] border border-[var(--border)] mt-14">
             {[
               { num: "01", title: "Propellant Formulation & Extrusion", desc: "High-solids composite propellant processed through our proprietary vacuum-boundary extrusion system. Complex internal geometries including star, finocyl, and moonburner profiles. Measured void fraction under 0.5%." },
               { num: "02", title: "Composite Motor Casings", desc: "Filament-wound carbon fiber casings engineered for high chamber pressures and extreme thermal loads. Demonstrated burst pressure exceeding 1,100 psi with production-batch destructive testing." },
@@ -169,10 +163,10 @@ export default function Home() {
               { num: "05", title: "Counter-UAS Propulsion", desc: "Solid rocket motors engineered for kinetic counter-drone applications. High-efficiency designs optimized for rapid-response deployment in partnership with the U.S. Space Force." },
               { num: "06", title: "Digital Process Control", desc: "Real-time extrusion monitoring with closed-loop control. Full digital traceability from propellant batch through final motor assembly, supporting production readiness reviews." },
             ].map((cap, i) => (
-              <div key={i} className="bg-[var(--bg)] p-8 md:p-11 transition-all duration-300 hover:bg-[var(--bg-hover)] relative group">
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-500/0 to-transparent group-hover:via-blue-500 transition-all duration-300" />
-                <div className="font-mono text-[10px] text-blue-400 mb-5 tracking-[1px]">{cap.num}</div>
-                <h3 className="text-[17px] font-semibold mb-3 tracking-[-0.2px] group-hover:text-blue-300 transition-colors">{cap.title}</h3>
+              <div key={i} className="bg-[var(--bg)] p-8 md:p-11 transition-colors hover:bg-[var(--bg-hover)] relative group">
+                <div className="absolute top-0 left-0 w-8 h-0.5 bg-[var(--accent)]" />
+                <div className="font-mono text-[10px] text-[var(--accent)] mb-5 tracking-[1px]">{cap.num}</div>
+                <h3 className="text-[17px] font-semibold mb-3 tracking-[-0.2px]">{cap.title}</h3>
                 <p className="text-[13.5px] text-[var(--text-2)] leading-[1.7]">{cap.desc}</p>
               </div>
             ))}
@@ -260,52 +254,34 @@ export default function Home() {
       </section>
 
       {/* Leadership Section */}
-      <section id="leadership" className="py-28 md:py-32 px-5 md:px-10 scroll-mt-14 relative overflow-hidden">
-        {/* Background accent */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="wrap relative">
+      <section id="leadership" className="py-28 md:py-32 px-5 md:px-10 scroll-mt-14">
+        <div className="wrap">
           <div className="section-tag">05 / Leadership</div>
           <h2 className="section-heading">Built by an engineer who<br />understands the mission.</h2>
           <div className="mt-14 flex flex-col md:flex-row items-start gap-10 md:gap-16 max-w-[900px]">
-            {/* Photo with gradient mask - no frame */}
+            {/* Photo - clean, no frame */}
             <div className="relative flex-shrink-0">
-              {/* Glowing ring behind photo */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/30 via-blue-600/20 to-transparent blur-xl scale-110" />
-              {/* Circular photo with gradient fade */}
-              <div className="relative w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden" style={{
-                background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.1) 100%)'
-              }}>
+              <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-[var(--border-2)]">
                 <Image
                   src="/shepherd-headshot.png"
                   alt="Shepherd Henry Kruse"
-                  width={192}
-                  height={192}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  width={176}
+                  height={176}
+                  className="w-full h-full object-cover"
                 />
-                {/* Gradient overlay for fade effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/80 via-transparent to-transparent" />
               </div>
-              {/* Decorative accent ring */}
-              <div className="absolute -inset-2 rounded-full border border-blue-500/20" />
-              <div className="absolute -inset-4 rounded-full border border-blue-500/10" />
             </div>
             {/* Bio content */}
             <div className="flex-1">
               <h3 className="text-[24px] font-semibold mb-1">Shepherd Henry Kruse</h3>
-              <div className="font-mono text-[12px] tracking-[1.5px] uppercase text-gradient mb-5">Founder & CEO</div>
+              <div className="font-mono text-[12px] tracking-[1.5px] uppercase text-[var(--accent)] mb-5">Founder & CEO</div>
               <p className="text-[15px] text-[var(--text-2)] leading-[1.85] mb-6">
                 Shepherd founded Shepherd Space Systems to solve a problem he saw firsthand: the solid rocket motor industrial base lacks the agile, flexible manufacturing capability that modern defense programs require. He designed and built the company&apos;s extrusion system, propellant formulations, and motor hardware from scratch.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-[12px] font-mono text-blue-400">
-                  M.S. Nuclear Engineering
-                </span>
-                <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-[12px] font-mono text-blue-400">
-                  B.S. Astronautical Engineering
-                </span>
-                <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-[12px] font-mono text-blue-400">
-                  1st Lt, USSF
-                </span>
+              <div className="flex flex-col gap-1.5 pt-4 border-t border-[var(--border)]">
+                <div className="font-mono text-[11px] text-[var(--text-3)]">M.S. Nuclear Engineering, 2025</div>
+                <div className="font-mono text-[11px] text-[var(--text-3)]">B.S. Astronautical Engineering</div>
+                <div className="font-mono text-[11px] text-[var(--text-3)]">First Lieutenant, United States Space Force</div>
               </div>
             </div>
           </div>
