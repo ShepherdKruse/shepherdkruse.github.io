@@ -4,20 +4,24 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* New color system matching the design */
-  --bg: #08090b;
-  --bg-raised: #0e1013;
-  --bg-card: #131518;
-  --bg-hover: #191b1f;
-  --text: #d8dae0;
-  --text-2: #7c818a;
-  --text-3: #4a4e56;
-  --accent: #4d8fac;
-  --accent-hover: #5da3c2;
-  --accent-dim: rgba(77, 143, 172, 0.1);
-  --accent-glow: rgba(77, 143, 172, 0.06);
-  --border: #191b1f;
-  --border-2: #242730;
+  /* Enhanced blue color system */
+  --bg: #06080c;
+  --bg-raised: #0a0d14;
+  --bg-card: #0f1319;
+  --bg-hover: #151a24;
+  --text: #e2e6ed;
+  --text-2: #8b93a5;
+  --text-3: #4d566a;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-dim: rgba(59, 130, 246, 0.15);
+  --accent-glow: rgba(59, 130, 246, 0.08);
+  --accent-strong: #2563eb;
+  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  --blue-glow: rgba(59, 130, 246, 0.25);
+  --border: #1a1f2e;
+  --border-2: #252d3f;
+  --border-accent: rgba(59, 130, 246, 0.3);
 
   /* Legacy tokens for shadcn compatibility */
   --background: 220 14% 4%;
@@ -162,17 +166,19 @@
   letter-spacing: 1.2px;
   text-transform: uppercase;
   padding: 14px 28px;
-  background: var(--accent);
+  background: var(--accent-gradient);
   color: #fff;
-  border: 1px solid var(--accent);
-  border-radius: 2px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.25s;
+  transition: all 0.3s ease;
   display: inline-block;
+  box-shadow: 0 4px 20px var(--blue-glow), 0 0 0 1px rgba(59, 130, 246, 0.3);
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--blue-glow), 0 0 0 1px rgba(59, 130, 246, 0.5);
 }
 
 .btn-secondary {
@@ -184,15 +190,44 @@
   background: transparent;
   color: var(--text-2);
   border: 1px solid var(--border-2);
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: color 0.25s, border-color 0.25s;
+  transition: all 0.3s ease;
   display: inline-block;
 }
 
 .btn-secondary:hover {
-  color: var(--text);
-  border-color: var(--text-3);
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow card effect */
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, transparent 50%, rgba(59, 130, 246, 0.1) 100%);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
 }
 
 /* Animation */
