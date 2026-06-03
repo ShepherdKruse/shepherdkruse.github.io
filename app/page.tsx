@@ -307,9 +307,6 @@ export default function Home() {
                 <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/25 rounded text-[11px] font-mono text-blue-400">
                   B.S. Astronautical Engineering
                 </span>
-                <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/25 rounded text-[11px] font-mono text-blue-400">
-                  1st Lt, USSF
-                </span>
               </div>
             </div>
           </div>
