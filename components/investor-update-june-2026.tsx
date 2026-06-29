@@ -17,12 +17,6 @@ const pipeline = [
   { step: "04", title: "Static Fire", desc: "Instrumented burn validates the prediction." },
 ]
 
-const gallery = [
-  { src: `${BASE}/ignition.png`, alt: "Motor ignition", caption: "Ignition" },
-  { src: `${BASE}/full-thrust.png`, alt: "Motor at full thrust", caption: "Full thrust" },
-  { src: `${BASE}/thrust-trace.png`, alt: "Measured thrust trace", caption: "Thrust trace" },
-]
-
 export function InvestorUpdateJune2026() {
   return (
     <main
@@ -70,7 +64,7 @@ export function InvestorUpdateJune2026() {
               controls
               playsInline
               preload="metadata"
-              poster={`${BASE}/poster.png`}
+              poster={`${BASE}/full-thrust.png`}
               className="w-full h-full object-cover"
             >
               <source src={VIDEO_SRC} type="video/mp4" />
@@ -153,24 +147,6 @@ export function InvestorUpdateJune2026() {
               full-duration burn, and the measured thrust trace matched our pre-test prediction.
               The design tools, the hardware, and the stand all agreed.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-              {gallery.map((g) => (
-                <figure key={g.src} className="group">
-                  <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-[var(--border-2)] bg-[var(--bg-card)]">
-                    <Image
-                      src={g.src || "/placeholder.svg"}
-                      alt={g.alt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, 320px"
-                    />
-                  </div>
-                  <figcaption className="font-mono text-[10px] tracking-[1.5px] uppercase text-[var(--text-3)] mt-2.5">
-                    {g.caption}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
           </Section>
 
           <Section num="04" title="Traction">
