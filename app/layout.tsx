@@ -1,23 +1,32 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({ subsets: ["latin"], display: "swap" })
+const geistSans = Geist({ 
+  subsets: ["latin"], 
+  display: "swap",
+  variable: "--font-sans"
+})
+
+const geistMono = Geist_Mono({ 
+  subsets: ["latin"], 
+  display: "swap",
+  variable: "--font-mono"
+})
 
 export const metadata: Metadata = {
-  title: "Delta-V | Shepherd Space Systems",
+  title: "Shepherd Space Systems | Advanced Solid Propulsion Manufacturing",
   description:
-    "Revolutionary 3D printed rocket engines with AI-optimized fuel geometries for custom thrust profiles and rapid deployment.",
-  keywords: ["rocket engines", "3D printing", "AI optimization", "propulsion", "aerospace", "defense"],
+    "Shepherd Space Systems manufactures high-performance solid rocket motors using proprietary vacuum-extrusion technology. Defense and commercial aerospace. Colorado Springs, CO.",
+  keywords: ["solid rocket motors", "propulsion", "aerospace", "defense", "vacuum extrusion", "manufacturing"],
   authors: [{ name: "Shepherd Space Systems" }],
   icons: {
-    icon: "/delta-v-logo-new.png",
+    icon: "/sss-logo.png",
   },
   openGraph: {
-    title: "Delta-V | Shepherd Space Systems",
-    description: "Revolutionary 3D printed rocket engines with AI-optimized fuel geometries",
+    title: "Shepherd Space Systems | Advanced Solid Propulsion Manufacturing",
+    description: "High-performance solid rocket motors using proprietary vacuum-extrusion technology",
     type: "website",
   },
     generator: 'v0.app'
@@ -29,11 +38,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          {children}
-        </ThemeProvider>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <body className="font-sans bg-[var(--bg)] text-[var(--text)] antialiased">
+        {children}
       </body>
     </html>
   )
