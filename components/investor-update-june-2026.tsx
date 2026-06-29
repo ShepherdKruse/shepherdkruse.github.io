@@ -1,8 +1,7 @@
 import Image from "next/image"
 
 const BASE = "/i/s7k2-jun26"
-const VIDEO_SRC =
-  "https://github.com/ShepherdKruse/ShepherdSpaceSystems/raw/main/public/i/s7k2-jun26/static-fire.mp4"
+const VIDEO_SRC = `${BASE}/static-fire.mp4`
 
 const telemetry = [
   { label: "Peak Thrust", value: "134", unit: "N" },
